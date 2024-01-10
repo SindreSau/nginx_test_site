@@ -1,0 +1,36 @@
+---
+import type { Code } from "astro:components";
+
+import { ViewTransitions } from "astro:transitions";
+import { fade } from 'astro:transitions';
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+
+<html lang='en' class="bg-gray-950 text-[#eee]">
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{title}</title>
+    <link rel='icon' href='/favicon.svg' />
+    
+    <ViewTransitions />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <nav class="container py-4 text-2xl flex justify-center gap-10">
+      <a href='/'>Home</a>
+      <a href='/about'>About</a>
+    </nav>
+
+    <main class="bg-gray-900 min-h-full grow pt-1 xl:pt-4" transition:animate={fade({ duration: '200ms' })}>
+      <div class="mx-2 md:mx-6 xl:mx-auto max-w-[1080px]">
+        <slot/>
+      </div>
+    </main>
+    
+    <footer class="container p-2 flex justify-center">
+      <p class="text-gray-600">© Sindre Sauarlia - 2024</p>
+    </footer>
+  </body>
+</html>

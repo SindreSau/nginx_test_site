@@ -1,16 +1,12 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title='Home'>
+  <h1>Hello from ubuntu/nginx</h1>
+  <img
+    class='rounded-full w-24 h-24 md:w-32 md:h-32'
+    src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh5wDX4ykC42Ay1KUiTsSolbqlEVWtLEBe4MytPZ_Cfg&s'
+    alt='face'
+  />
+</MainLayout>
